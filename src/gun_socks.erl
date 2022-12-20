@@ -23,6 +23,7 @@
 -export([handle/5]).
 -export([closing/4]).
 -export([close/4]).
+-export([down/1]).
 %% @todo down
 
 -record(socks_state, {
@@ -205,3 +206,7 @@ closing(_, _, _, EvHandlerState) ->
 
 close(_, _, _, EvHandlerState) ->
 	EvHandlerState.
+
+down(_state) ->
+	%% @todo tunnels must be included in the gun_down message.
+	[].
